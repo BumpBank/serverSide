@@ -1,0 +1,16 @@
+{
+  "name": "serverSide",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "body-parser": "~1.13.2",
+    "cookie-parser": "~1.3.5",
+    "express": "~4.13.1",
+    "knex": "^0.12.6",
+    "sqlite3": "^3.1.8",
+    "supertest": "^2.0.1"
+  }
+}
