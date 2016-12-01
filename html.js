@@ -1,4 +1,4 @@
-module.exports = `
+module.exports = (data) =>{ return `
 <!DOCTYPE html>
 <html lang="">
   <head>
@@ -10,7 +10,9 @@ module.exports = `
   <body>
     <main>
     </main>
+    <div  id='data' data-payload='${data}'></div>
     <script src="bundle.js"></script>
   </body>
 </html>
 `
+}
