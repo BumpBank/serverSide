@@ -3,7 +3,7 @@ var passport = require('passport')
 var router = express.Router()
 
 router.post('/',
-  passport.authenticate('local', {
+  passport.authenticate('login', {
     successRedirect: '/secret',
     failureRedirect: '/login'
   })

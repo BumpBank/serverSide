@@ -2,12 +2,12 @@ var passport = require('passport')
 var LocalStrategy = require('passport-local').Strategy
 var bcrypt = require('bcrypt')
 
-var getUserByUsername = require('./db/db').getUserByUsername
+// var getUserByUsername = require('./db/db').getUserByUsername
 var getAllUsers = require('./db/db').getAllUsers
 
 module.exports = function setup () {
   var strategy = new LocalStrategy(function (username, password, done) {
-    var user
+    var user = ''
     getAllUsers()
     .then(function (users) {
       user = users.find((user) => {
@@ -31,7 +31,7 @@ module.exports = function setup () {
 
   // how do I find a user given the piece of information stored in the cookie
   passport.deserializeUser(function (id, done) {
-    getUsers()
+    getAllUsers()
     .then((users) => {
       done(null, users.find(function (user) {
         return user.id === id

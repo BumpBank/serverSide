@@ -3,7 +3,10 @@ const knexConfig = require('../knexfile')[process.env.NODE_ENV || 'development']
 
 const knex = Knex(knexConfig)
 
-const getAllUsers = () => knex('bank')
+const getAllUsers = () => {
+  console.log('Im in the function')
+  return knex('bank')
+}
 
 const getUserByUsername = (name) => knex('bank').where('username', name)
 
