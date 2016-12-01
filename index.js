@@ -11,14 +11,9 @@ var main = document.querySelector('main')
 var app = document.createElement('div')
 main.appendChild(app)
 
-const initialState = {
-  id: 1,
-  username: 'ron',
-  password: 'ronwins',
-  pin: 1234,
-  accountNumber: '123456-1234567-00',
-  balance: 100.1,
-}
+
+const initialState = JSON.parse(document.getElementById('data').dataset.payload)
+
 
 const store = createStore(reducer, initialState)
 
