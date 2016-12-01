@@ -9,6 +9,8 @@ const setupPassport = require('./passportSetup')
 const exphbs = require('express-handlebars')
 
 var users = require('./routes/users');
+const login = require('./routes/login')
+
 var app = express();
 
 //view engine setup
@@ -28,6 +30,7 @@ app.use(passport.session())
 setupPassport()
 
 app.use('/api/v1/users', users);
+app.use('/login', login)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
