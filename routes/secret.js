@@ -3,7 +3,7 @@ var router = express.Router()
 
 /* GET users listing. */
 router.get('/', ensureAuthenticated, function (req, res, next) {
-  res.send('hello ' + req.user.username)
+  res.send(require('../html.js'))
 })
 
 function ensureAuthenticated (req, res, next) {

@@ -11,7 +11,7 @@ router.post( '/', (req, res) => {
   var password = req.body.password
   var user = req.body.username
   bcrypt.hash(password, saltRounds, function(err, hash) {
-    var userobj = {username: user, password: hash}
+    var userobj = {username: user, password: hash, balance: req.body.balance, accountNumber: req.body.accountNumber, pin: req.body.pin}
     addUser(userobj)
     .then(() => res.redirect('/login'))
 
