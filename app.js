@@ -9,7 +9,7 @@ const setupPassport = require('./passportSetup')
 const exphbs = require('express-handlebars')
 const cors = require('cors');
 
-var users = require('./routes/users');
+const users = require('./routes/users');
 const login = require('./routes/login')
 const signup = require('./routes/signup')
 const secret = require('./routes/secret')
