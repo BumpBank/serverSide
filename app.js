@@ -12,7 +12,6 @@ var users = require('./routes/users');
 const login = require('./routes/login')
 const signup = require('./routes/signup')
 const secret = require('./routes/secret')
-const signup = require('./routes/signup')
 
 var app = express();
 
