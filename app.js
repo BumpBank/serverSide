@@ -11,6 +11,7 @@ const exphbs = require('express-handlebars')
 var users = require('./routes/users');
 const login = require('./routes/login')
 const secret = require('./routes/secret')
+const signup = require('./routes/signup')
 
 var app = express();
 
@@ -33,6 +34,7 @@ setupPassport()
 app.use('/api/v1/users', users);
 app.use('/login', login)
 app.use('/secret', secret)
+app.use('/signup', signup)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
