@@ -19,7 +19,7 @@ const initialState = JSON.parse(document.getElementById('data').dataset.payload)
   // balance: 100.1,
 
 
-console.log(document.getElementById('data').dataset.payload)
+
 const store = createStore(reducer, initialState)
 
 var main = document.querySelector('main')
