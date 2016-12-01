@@ -12,10 +12,13 @@ module.exports = function setup () {
     var user
     getUserByUsername(username)
     .then(function(user){
-      if(user[0].username == username && user[0].password == password) {
-      console.log(user);
-      return done(null, user)
-      }
+      bcrypt.compare(password, user[0].password, function(err, res){
+        if (res === true) {
+          return done(null, user)
+        } else {
+           done(null)
+        }
+      })
     })
     .catch((err) => done(err, user))
   })
@@ -38,29 +41,3 @@ module.exports = function setup () {
     })
   })
 }
-
-
-// getAllUsers()
-// .then(function(users) {
-//   console.log(users);
-//   var result = users.find(function (user) {
-//     console.log(user);
-//     if( user.username == username && user.password == password){
-//       return done(null, result)
-//     }
-//     return done(null, result)
-//   })
-// })
-// })
-
-// getAllUsers()
-// .then(function (users) {
-//   user = users.find((user) => {
-//     bcrypt.compare(password, user.password, function (err, res) {
-//       if (res === true) {
-//         return done(null, user)
-//       } else {
-//          done(null)
-//       }
-//     })
-//   })
