@@ -4,7 +4,7 @@ var router = express.Router()
 
 router.post('/',
   passport.authenticate('local', {
-    successRedirect: '', // TBA
+    successRedirect: '/secret',
     failureRedirect: '/login'
   })
 )
