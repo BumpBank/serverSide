@@ -16,8 +16,8 @@ const secret = require('./routes/secret')
 var app = express();
 
 //view engine setup
-app.engine('.hbs', exphbs({defaultLayout: 'main', extname: '.hbs'}));
-app.set('view engine', '.hbs');
+app.engine('handlebars', exphbs({defaultLayout: 'main'}));
+app.set('view engine', 'handlebars');
 
 
 // uncomment after placing your favicon in /public
