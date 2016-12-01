@@ -1,6 +1,6 @@
-var express = require('express')
-var path = require('path')
-var cookieParser = require('cookie-parser')
+var express = require('express');
+var path = require('path');
+var cookieParser = require('cookie-parser');
 var logger = require('morgan')
 var bodyParser = require('body-parser')
 var passport = require('passport')
@@ -8,14 +8,15 @@ var session = require('express-session')
 const setupPassport = require('./passportSetup')
 const exphbs = require('express-handlebars')
 
-var users = require('./routes/users')
-var login = require('./routes/login')
-var signup = require('./routes/signup')
-var app = express()
+var users = require('./routes/users');
+const login = require('./routes/login')
 
-// view engine setup
-app.engine('hbs', exphbs({defaultLayout: 'main', extname: '.hbs'}))
-app.set('view engine', 'hbs')
+var app = express();
+
+//view engine setup
+app.engine('.hbs', exphbs({defaultLayout: 'main', extname: '.hbs'}));
+app.set('view engine', '.hbs');
+
 
 // uncomment after placing your favicon in /public
 // app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
@@ -28,9 +29,8 @@ app.use(passport.initialize())
 app.use(passport.session())
 setupPassport()
 
-app.use('/api/v1/users', users)
+app.use('/api/v1/users', users);
 app.use('/login', login)
-app.use('/signup', signup)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
