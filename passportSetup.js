@@ -9,9 +9,9 @@ module.exports = function setup () {
   var strategy = new LocalStrategy(function (username, password, done) {
     var user
     getAllUsers()
-    .then(function(users){
+    .then(function (users) {
       user = users.find((user) => {
-        bcrypt.compare(password, user.password, function(err, res){
+        bcrypt.compare(password, user.password, function (err, res) {
           if (res === true) {
             return done(null, user)
           } else {

@@ -5,15 +5,16 @@ var logger = require('morgan')
 var bodyParser = require('body-parser')
 var passport = require('passport')
 var session = require('express-session')
-const exphbs = require('express-haddlebars')
+const setupPassport = require('./passportSetup')
+const exphbs = require('express-handlebars')
 
 var users = require('./routes/users');
+var app = express();
 
 //view engine setup
 app.engine('.hbs', exphbs({defaultLayout: 'main', extname: '.hbs'}));
 app.set('view engine', '.hbs');
 
-var app = express();
 
 // uncomment after placing your favicon in /public
 // app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
@@ -57,8 +58,6 @@ app.use(function (err, req, res, next) {
     message: err.message,
     error: {}
   })
+})
 
-
-
-
-module.exports = app;
+module.exports = app

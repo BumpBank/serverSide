@@ -1,6 +1,6 @@
 
-exports.up = function(knex, Promise) {
-  return knex.schema.createTableIfNotExists('bank', function(table){
+exports.up = function (knex, Promise) {
+  return knex.schema.createTableIfNotExists('bank', function (table) {
     table.increments('id')
     table.string('username')
     table.string('password')
@@ -8,9 +8,8 @@ exports.up = function(knex, Promise) {
     table.string('accountNumber')
     table.decimal('balance')
   })
+}
 
-};
-
-exports.down = function(knex, Promise) {
+exports.down = function (knex, Promise) {
   return knex.schema.dropTableIfExists('bank')
-};
+}
