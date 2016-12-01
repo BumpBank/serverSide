@@ -10,12 +10,13 @@ const exphbs = require('express-handlebars')
 
 var users = require('./routes/users');
 const login = require('./routes/login')
+const secret = require('./routes/secret')
 
 var app = express();
 
 //view engine setup
-app.engine('.hbs', exphbs({defaultLayout: 'main', extname: '.hbs'}));
-app.set('view engine', '.hbs');
+app.engine('handlebars', exphbs({defaultLayout: 'main'}));
+app.set('view engine', 'handlebars');
 
 
 // uncomment after placing your favicon in /public
@@ -31,6 +32,7 @@ setupPassport()
 
 app.use('/api/v1/users', users);
 app.use('/login', login)
+app.use('/secret', secret)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
