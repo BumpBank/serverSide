@@ -1,10 +1,10 @@
-const express = require('express');
+const express = require('express')
 const router = express.Router()
 const getAllUsers = require('../db/db').getAllUsers
 const addUser = require('../db/db').addUser
 
 /* GET users listing. */
-router.get('/', function(req, res) {
+router.get('/', function (req, res) {
   getAllUsers()
   .then((users) => {
     res.json(users)
@@ -12,10 +12,10 @@ router.get('/', function(req, res) {
   .catch((err) => {
     console.log(err)
   })
-});
+})
 
-router.post('/', function(req, res) {
-  console.log(req.body);
+router.post('/', function (req, res) {
+  console.log(req.body)
   addUser(req.body)
   .then((data) => res.json(data))
   .catch((err) => {
@@ -23,4 +23,4 @@ router.post('/', function(req, res) {
   })
 })
 
-module.exports = router;
+module.exports = router

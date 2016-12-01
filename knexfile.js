@@ -10,4 +10,4 @@ module.exports = {
     useNullAsDefault: true
   },
   production: process.env.DATABASE_URL
-};
+}
