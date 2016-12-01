@@ -4,21 +4,21 @@ import {createStore} from 'redux'
 import clone from 'clone'
 import Main from './components/main'
 import Balance from './components/balance'
+import Splitting from './components/splitting'
 const reducer = require('./reducer')
 
 var main = document.querySelector('main')
 var app = document.createElement('div')
 main.appendChild(app)
 
-const initialState = JSON.parse(document.getElementById('data').dataset.payload)
-  // id: 1,
-  // username: 'ron',
-  // password: 'ronwins',
-  // pin: 1234,
-  // accountNumber: '123456-1234567-00',
-  // balance: 100.1,
-
-
+const initialState = {
+  id: 1,
+  username: 'ron',
+  password: 'ronwins',
+  pin: 1234,
+  accountNumber: '123456-1234567-00',
+  balance: 100.1,
+}
 
 const store = createStore(reducer, initialState)
 
@@ -30,6 +30,7 @@ store.subscribe( () => {
     <div>
     <Main state={state}/>
     <Balance name="balance" state={state}/>
+    <Splitting name="splitting" state={state}/>
     </div>,
     main)
 
