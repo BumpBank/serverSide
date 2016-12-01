@@ -7,8 +7,9 @@ var passport = require('passport')
 var session = require('express-session')
 const setupPassport = require('./passportSetup')
 const exphbs = require('express-handlebars')
+const cors = require('cors');
 
-var users = require('./routes/users');
+const users = require('./routes/users');
 const login = require('./routes/login')
 const signup = require('./routes/signup')
 const secret = require('./routes/secret')
@@ -22,6 +23,7 @@ app.set('view engine', 'handlebars');
 
 // uncomment after placing your favicon in /public
 // app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
+app.use(cors())
 app.use(logger('dev'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
