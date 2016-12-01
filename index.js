@@ -4,7 +4,7 @@ import {createStore} from 'redux'
 import clone from 'clone'
 import Main from './components/main'
 import Balance from './components/balance'
-// import Split from './components/split'
+import Splitting from './components/splitting'
 const reducer = require('./reducer')
 
 var main = document.querySelector('main')
@@ -30,7 +30,7 @@ store.subscribe( () => {
     <div>
     <Main state={state}/>
     <Balance name="balance" state={state}/>
-    // <Split name="split" state={state}/>
+    <Splitting name="splitting" state={state}/>
     </div>,
     main)
 
