@@ -11,5 +11,6 @@ const addUser = (user) => knex('bank').insert(user)
 
 module.exports = {
   getAllUsers,
-  getUserByUsername
+  getUserByUsername,
+  addUser
 }

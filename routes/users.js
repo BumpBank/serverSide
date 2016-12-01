@@ -7,7 +7,7 @@ const addUser = require('../db/db').addUser
 router.get('/', function(req, res) {
   getAllUsers()
   .then((users) => {
-    res.json({users})
+    res.json(users)
   })
   .catch((err) => {
     console.log(err)
@@ -15,8 +15,12 @@ router.get('/', function(req, res) {
 });
 
 router.post('/', function(req, res) {
-  addUser(req)
-  .then((req) => res.json(req))
+  console.log(req.body);
+  addUser(req.body)
+  .then((data) => res.json(data))
+  .catch((err) => {
+    console.log(err)
+  })
 })
 
 module.exports = router;
