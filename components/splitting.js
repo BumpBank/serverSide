@@ -3,7 +3,7 @@ import Pay from './pay'
 
 const Splitting = (props) => {
   return <div className="splitting">
-    <h3>Splitting a bill</h3>
+    <h3>Split the Bill</h3>
     <form className="splittingForm">
       <input id="how-much" type="text" placeholder="How much" className="howMuch"/>
       <input id="how-many" type="text" placeholder="How many people" className="peopleNum"/>
