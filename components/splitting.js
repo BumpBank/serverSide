@@ -25,7 +25,7 @@ function clickHandler(e, props) {
 function renderAmount(state) {
   if (state.splitted) {
     return <div>
-      <h3>${state.splitted}</h3>
+      <h3>${parseFloat(state.splitted).toFixed(2)}</h3>
       <Pay name="pay" state={state}/>
     </div>
   }
