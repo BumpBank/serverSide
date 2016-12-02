@@ -6,6 +6,7 @@ module.exports = (data) =>{ return `
     <title>bumpbank balance</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="index.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Holtwood+One+SC|Raleway" rel="stylesheet">
   </head>
   <body>
     <main>

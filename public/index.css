@@ -1,3 +1,31 @@
-main {
+html {
   text-align: center;
+  background-color: #1d3f75;
+  font-family: 'Raleway', sans-serif;
+  color: white;
+}
+
+.title {
+  font-family: 'Holtwood One SC', serif;
+  color: yellow;
+  letter-spacing: 3px;
+  font-size: 2.5em;
+}
+
+.howMuch, .peopleNum, .calcBtn, .whoTo, .pay {
+  width: 80%;
+  padding: 4%;
+  font-family: 'Raleway', sans-serif;
+}
+
+.calcBtn, .pay {
+  width: 50%;
+  background-color: yellow;
+  border-radius: 3px;
+  color: #1d3f75;
+  text-transform: uppercase;
+}
+
+.peopleNum, .whoTo {
+  margin: 1%;
 }
