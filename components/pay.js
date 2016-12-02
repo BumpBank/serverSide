@@ -1,4 +1,5 @@
 import React from 'react'
+const transaction = require('../db/db').transaction
 
 const Pay = (props) => {
   return <div className="payment">
