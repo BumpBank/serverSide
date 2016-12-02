@@ -5,6 +5,10 @@ function reducer(state, action) {
     switch(action.type){
       case 'INIT':
         return newState
+      case 'SHOW_PAY':
+        console.log(action.payload);
+        newState.splitted = action.payload
+        return newState
 
       default:
         return newState
