@@ -25,7 +25,7 @@ store.subscribe( () => {
     <div>
     <Main state={state}/>
     <Balance name="balance" state={state}/>
-    <Splitting name="splitting" state={state}/>
+    <Splitting name="splitting" state={state} dispatch={store.dispatch}/>
     </div>,
     main)
 
